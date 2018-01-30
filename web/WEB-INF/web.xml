@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+		  http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
+
+    <display-name>SWPIMS</display-name>
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+
+    <servlet>
+        <servlet-name>ImageryTileService</servlet-name>
+        <servlet-class>com.cjwsjy.gis.servlet.ImageryTileService</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ImageryTileService</servlet-name>
+        <url-pattern>/GetTile</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TerrainTileService</servlet-name>
+        <servlet-class>com.cjwsjy.gis.servlet.TerrainTileService</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TerrainTileService</servlet-name>
+        <url-pattern>/GetTerrain</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ProjectStatusTreeService</servlet-name>
+        <servlet-class>com.cjwsjy.rmip.servlet.ProjectStatusTreeService</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ProjectStatusTreeService</servlet-name>
+        <url-pattern>/GetProjectStatusTree</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AuthenticationService</servlet-name>
+        <servlet-class>com.cjwsjy.rmip.servlet.AuthenticationService</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AuthenticationService</servlet-name>
+        <url-pattern>/GetAuthentication</url-pattern>
+    </servlet-mapping>
+
+</web-app>
