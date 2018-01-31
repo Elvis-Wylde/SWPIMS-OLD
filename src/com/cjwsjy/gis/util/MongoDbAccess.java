@@ -31,7 +31,7 @@ public class MongoDbAccess {
      */
     private static void initMongoClient() {
     	MongoClientOptions.Builder opts = new MongoClientOptions.Builder();
-    	opts.connectionsPerHost(100);// 与目标数据库可以建立的最大链接数
+    	opts.connectionsPerHost(10);// 与目标数据库可以建立的最大链接数
     	opts.connectTimeout(1000 * 60 * 20);// 与数据库建立链接的超时时间
     	opts.maxWaitTime(100 * 60 * 5);// 一个线程成功获取到一个可用数据库之前的最大等待时间
     	opts.threadsAllowedToBlockForConnectionMultiplier(100);
