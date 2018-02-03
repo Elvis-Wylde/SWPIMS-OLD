@@ -113,6 +113,9 @@ Ext.define('RMIS.view.panels.ConstructDetailPanel', {
                             };
                         }
                     }],
+					listeners: {
+                        rowclick: 'onGridRowClick'
+					}
                 }]
             }, {
             	title: '升压站建筑工程施工信息',

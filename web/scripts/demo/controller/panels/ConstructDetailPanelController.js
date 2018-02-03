@@ -190,6 +190,17 @@ Ext.define('RMIS.controller.panels.ConstructDetailPanelController', {
     		}
     		RMIS.getApplication().showResourcesViewer('video', contents);
     	}
-    }
+    },
+
+    onGridRowClick: function(grid, record, rowIndex, e, eOpts) {
+        var me = this,
+			cesiumEx = me.getCesiumEx();
+
+        if (record.get('id') === 'road-1') {
+            cesiumEx.renderRoad(true, [111.11412501, 25.47016274, 111.11388702, 25.47001236, 111.11370810, 25.47025273, 111.11369168, 25.47039726, 111.1134179, 25.47066583, 111.1133838, 25.47075985, 111.11319826, 25.47086462], 1);
+		} else {
+            cesiumEx.renderRoad(false, [], 0);
+		}
+	}
     
 });

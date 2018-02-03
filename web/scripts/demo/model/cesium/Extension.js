@@ -157,6 +157,26 @@ Ext.define('RMIS.model.cesium.Extension', {
     renderVideos: function(records, flyDuration) {
     	return this._renderPointEntities(records, this.videoDataSource, this._getVideoEntity, false, flyDuration);
     },
+
+	renderRoad: function(visible, positions, flyDuration) {
+        this.roadDataSource.entities.removeAll();
+		if (visible) {
+            if (!this.roadEntity) {
+            	this.roadEntity = new Cesium.Entity({
+					id: 'road-1',
+                    corridor: new Cesium.CorridorGraphics({
+                        positions : Cesium.Cartesian3.fromDegreesArray(positions),
+                        width : 5.0,
+                        material : Cesium.Color.RED.withAlpha(0.7)
+                    })
+                });
+            }
+            this.roadDataSource.entities.add(this.roadEntity);
+		}
+		if (flyDuration > 0) {
+            this._flyToEntity(this.roadEntity, {flyDuration: flyDuration, range: 50});
+		}
+	},
     
     switchRegion: function(id) {
     	if (id instanceof Cesium.Entity) {
@@ -521,6 +541,13 @@ Ext.define('RMIS.model.cesium.Extension', {
 			    canvas : me.viewer.scene.canvas
 			});
 		}
+        if (!Cesium.defined(me.roadDataSource)) {
+            me.roadDataSource = new Cesium.CustomDataSource('road');
+            me.viewer.dataSources.add(me.roadDataSource, {
+                camera : me.viewer.scene.camera,
+                canvas : me.viewer.scene.canvas
+            });
+        }
     	/*
     	if (!Cesium.defined(me.labelDataSource)) {
     		me.labelDataSource = new Cesium.CustomDataSource('labels');

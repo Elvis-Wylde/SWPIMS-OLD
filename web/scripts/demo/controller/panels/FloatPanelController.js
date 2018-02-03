@@ -160,6 +160,7 @@ Ext.define('RMIS.controller.panels.FloatPanelController', {
     	cesiumEx.renderMachines([], 0);
     	cesiumEx.renderImages([], 0);
     	cesiumEx.renderVideos([], 0);
+        cesiumEx.renderRoad(false, [], 0);
     	for (var key in cesiumEx.singleImageLayerSet) {
     		cesiumEx.singleImageLayerSet[key].show = false;
     	}
