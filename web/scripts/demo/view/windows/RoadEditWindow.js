@@ -98,28 +98,20 @@ Ext.define('RMIS.view.windows.RoadEditWindow', {
                         ['支路','支路']
                     ]
                 }) },
-                { text: '计划开始时间', width: 105, xtype: 'datecolumn', dataIndex: 'pstart', align: 'center', editor: {
-                    xtype: 'datefield',
-                    format: 'm/d/y',
-                    minValue: '01/01/06'
-                } },
-                { text: '计划完成时间', width: 105, xtype: 'datecolumn', dataIndex: 'pend', align: 'center', editor: {
-                    xtype: 'datefield',
-                    format: 'm/d/y',
-                    minValue: '01/01/06'
-                } },
-                { text: '实际开始时间', width: 105, xtype: 'datecolumn', dataIndex: 'astart', align: 'center' , editor: {
+                { text: '计划开始时间', width: 120, xtype: 'datecolumn', dataIndex: 'pstart', align: 'center', formatter: 'date("Y年m月d日")' },
+                { text: '计划完成时间', width: 120, xtype: 'datecolumn', dataIndex: 'pend', align: 'center', formatter: 'date("Y年m月d日")' },
+                { text: '实际开始时间', width: 120, xtype: 'datecolumn', dataIndex: 'astart', align: 'center' , formatter: 'date("Y年m月d日")', editor: {
                     xtype: 'datefield',
                     format: 'm/d/y',
                     minValue: '01/01/06'
                 }},
-              	{ text: '实际完成时间', width: 105, xtype: 'datecolumn', dataIndex: 'aend', align: 'center' , editor: {
+              	{ text: '实际完成时间', width: 120, xtype: 'datecolumn', dataIndex: 'aend', align: 'center' , formatter: 'date("Y年m月d日")', editor: {
                     xtype: 'datefield',
                     format: 'm/d/y',
                     minValue: '01/01/06'
                 }},
               	
-                { text: '进度情况', width: 105, dataIndex: 'percent', align: 'center', xtype: 'widgetcolumn', widget: {
+                { text: '进度情况', width: 105, dataIndex: 'percent', align: 'center', xtype: 'widgetcolumn', formatter: 'date("Y年m月d日")', widget: {
                     xtype: 'progressbarwidget',
                     textTpl: [
                         '{percent:number("0")}%'

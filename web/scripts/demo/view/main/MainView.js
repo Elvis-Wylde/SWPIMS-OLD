@@ -72,6 +72,16 @@ Ext.define('RMIS.view.main.MainView', {
             listeners: {
             	toggle: 'onSwitchNavTree'
             }
+        }, */{
+            iconCls: 'x-fa fa-comment-o',
+            ui: 'header',
+            reference: 'messages',
+            // href: '#message',
+            // hrefTarget: '_self',
+            tooltip: '信息交流',
+            listeners: {
+                // click: 'showDocumentWindow'
+            }
         }, {
 			iconCls: 'x-fa fa-file-text',
 			ui: 'header',
@@ -80,9 +90,9 @@ Ext.define('RMIS.view.main.MainView', {
 			// hrefTarget: '_self',
 			tooltip: '文档管理',
 			listeners: {
-				click: 'showDocumentWindow'
+				// click: 'showDocumentWindow'
 			}
-		}, */{
+		}, {
 			iconCls: 'header-faq-btn',
 			ui: 'header',
 			href: '#faq',

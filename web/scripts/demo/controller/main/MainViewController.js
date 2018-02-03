@@ -11,6 +11,8 @@ Ext.define('RMIS.controller.main.MainViewController', {
 		'RMIS.view.panels.ConstructStatPanel',
 		'RMIS.view.panels.PreProcessDetailPanel',
 		'RMIS.view.panels.ConstructDetailPanel',
+        'RMIS.view.panels.BalanceStatPanel',
+        'RMIS.view.panels.BalanceDetailPanel',
 		// 其他
 		'RMIS.view.panels.EmptyPanel'					// 空面板
 	],

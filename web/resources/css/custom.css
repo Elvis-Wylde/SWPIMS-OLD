@@ -18,6 +18,24 @@
 .fa-envira:before {
 	content: "\f299" !important;
 }
+
+/* grid 结算 按钮 */
+.array-grid-jiesuan-col:before {
+    color: #81cb31;
+    content: "已结算";
+}
+
+.array-grid-daijiesuan-col:before {
+    font: 18px/1 FontAwesome;
+    color: #cbc44f;
+    content: "\f09d";
+}
+
+.array-grid-nojiesuan-col:before {
+    color: #cb6566;
+    content: "无法结算";
+}
+
 /* Unit */
 .unit-field .trigger-noop {
     cursor: default;
